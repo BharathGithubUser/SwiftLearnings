@@ -1,24 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BBo-q0-nUZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="6EW-L9-6Qp">
+            <objects>
+                <navigationController id="BBo-q0-nUZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Ii-QT-lpT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="86l-Ig-d0r" kind="relationship" relationship="rootViewController" id="uT1-xf-G3u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YI1-8R-ZAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="78"/>
+        </scene>
+        <!--Animated Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AnimatedSplashViewController" customModule="SwiftLearnings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.gif" translatesAutoresizingMaskIntoConstraints="NO" id="dzV-Wm-dDt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dzV-Wm-dDt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1bg-nq-4lj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dzV-Wm-dDt" secondAttribute="bottom" id="Nfd-Ak-7Nl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dzV-Wm-dDt" secondAttribute="trailing" id="vb3-ex-wg7"/>
+                            <constraint firstItem="dzV-Wm-dDt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xWD-ce-HQA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lBH-OW-OG4"/>
+                    <connections>
+                        <outlet property="splashImageView" destination="dzV-Wm-dDt" id="JMQ-b6-KHz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="527" y="-787"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Gfi-hL-l9f">
+            <objects>
+                <viewController id="86l-Ig-d0r" customClass="ProfileViewController" customModule="SwiftLearnings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0cx-Jf-6HA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.gif" translatesAutoresizingMaskIntoConstraints="NO" id="sG6-ka-e3Z">
+                                <rect key="frame" x="140.5" y="64" width="94" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sG6-ka-e3Z" secondAttribute="height" multiplier="2:2" id="GEV-xc-JFT"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-iQ-0pe">
+                                <rect key="frame" x="0.0" y="166" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No File Choosen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js4-ad-La5">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-y9-nLh">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                        <color key="backgroundColor" red="0.77610296010971069" green="0.86206477880477905" blue="0.94651490449905396" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Choose File"/>
+                                        <connections>
+                                            <action selector="showPhotoLibraryAction:" destination="86l-Ig-d0r" eventType="touchUpInside" id="71H-NZ-LXo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Js4-ad-La5" firstAttribute="width" secondItem="KDQ-y9-nLh" secondAttribute="width" id="96F-dX-UnP"/>
+                                    <constraint firstAttribute="height" constant="50" id="ea3-UQ-vNb"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-Nb-OO0">
+                                <rect key="frame" x="9" y="267" width="356" height="30"/>
+                                <color key="backgroundColor" red="0.92476916313171387" green="0.81309527158737183" blue="0.95444339513778687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sjh-7Q-k7n"/>
+                                </constraints>
+                                <state key="normal" title="Upload Image to Server">
+                                    <color key="titleColor" red="0.50342100858688354" green="0.29640364646911621" blue="0.98378747701644897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveToServerAction:" destination="86l-Ig-d0r" eventType="touchUpInside" id="nhE-VN-sN6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sG6-ka-e3Z" firstAttribute="width" secondItem="0cx-Jf-6HA" secondAttribute="width" multiplier="0.25" id="Wgc-vb-bpI"/>
+                            <constraint firstItem="4xx-iQ-0pe" firstAttribute="centerX" secondItem="0cx-Jf-6HA" secondAttribute="centerX" id="ZnX-aB-ood"/>
+                            <constraint firstItem="Ain-Nb-OO0" firstAttribute="width" secondItem="0cx-Jf-6HA" secondAttribute="width" multiplier="0.95" id="bgG-Ob-zu0"/>
+                            <constraint firstItem="sG6-ka-e3Z" firstAttribute="centerX" secondItem="0cx-Jf-6HA" secondAttribute="centerX" id="cB6-YH-BFg"/>
+                            <constraint firstItem="4xx-iQ-0pe" firstAttribute="top" secondItem="sG6-ka-e3Z" secondAttribute="bottom" constant="8" id="flF-ld-nNN"/>
+                            <constraint firstItem="sG6-ka-e3Z" firstAttribute="top" secondItem="WcS-rT-fgC" secondAttribute="top" id="gX6-za-gYe"/>
+                            <constraint firstItem="4xx-iQ-0pe" firstAttribute="width" secondItem="0cx-Jf-6HA" secondAttribute="width" id="k7C-hb-w0M"/>
+                            <constraint firstItem="Ain-Nb-OO0" firstAttribute="top" secondItem="Js4-ad-La5" secondAttribute="bottom" constant="51" id="qzL-xs-7US"/>
+                            <constraint firstItem="Ain-Nb-OO0" firstAttribute="centerX" secondItem="0cx-Jf-6HA" secondAttribute="centerX" id="wgG-O7-ioa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WcS-rT-fgC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ks5-GD-mSz"/>
+                    <connections>
+                        <outlet property="chooseImageButton" destination="KDQ-y9-nLh" id="If3-ia-uIq"/>
+                        <outlet property="imageNameLabel" destination="Js4-ad-La5" id="BhT-9D-9CQ"/>
+                        <outlet property="profileImageView" destination="sG6-ka-e3Z" id="SBb-dO-oeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AjP-ZS-7Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash.gif" width="500" height="500"/>
+    </resources>
 </document>
